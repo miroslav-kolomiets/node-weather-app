@@ -1,6 +1,58 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600&display=swap');
+
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #000;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+#main {
+    transition: margin-left .5s;
+}
+
+@media screen and (max-height: 450px) {
+
+    .sidenav {
+        padding-top: 15px;
+    }
+    .sidenav a {
+        font-size: 18px;
+    }
+}
+
 body {
     color: #333;
-    font-family: Arial, Helvetica, sans-serif;
+    background-color: #fff;
+    font-family: 'Open Sans', sans-serif;
     max-width: 650px;
     display: flex;
     flex-direction: column;
@@ -10,6 +62,40 @@ body {
     padding: 0;
     width: 100%;
     min-height: 100vh;
+}
+#search-form{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#search-form input {
+    display: inline-block;
+    height: 30px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    border-radius: 25px;
+    border: 0;
+    font-size: 18px;
+    padding: 5px;
+    margin: 7px 15px;
+    text-align: center;
+    border: 1px solid #333;
+    outline: none;
+}
+
+#search-form button {
+    display: inline-block;
+    vertical-align: top;
+    height: 30px;
+    font-size: 15px;
+    font-weight: 300;
+    text-align: center;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    background-color: rgba(0,0,0,.06);
 }
 
 footer {
@@ -26,22 +112,25 @@ footer {
 .main-content {
     width: 100%;
     flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 header {
     width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
 }
 
 header h1 {
     text-align: center;
-}
-
-header ul {
-    list-style-type: none;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    flex-grow: 1;
 }
 
 header li {

@@ -5,14 +5,17 @@ const forecast = (latitude, longitude, callback) => {
 
     request({ url, json: true }, (error, response) => {
 
-        console.log(response.body);
         const {currently} = response.body;
         if (error) {
             callback('Unable to connect to weather service!', undefined)
         } else if (response.body.error) {
             callback(response.body.error, undefined)
         } else {
-            callback(undefined, 'Now is ' + currently.temperature + ' degrees now.')
+            callback (
+                undefined,
+                'Now is ' + currently.temperature + ' degrees.',
+                response.body.daily.data[0].summary
+            )
         }
     })
 }
